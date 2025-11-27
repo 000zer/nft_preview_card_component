@@ -35,10 +35,42 @@ body {
     border-radius: 15px;
     box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.2);
 }
+.card_picture {
+ position: relative;
+    height: 302px;
+}
 .card_picture_img {
     width: 100%;
-    height: 302px;
     border-radius: 8px;
+}
+.card_picture_svg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    cursor: pointer;
+    background-image: url(./images/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+}
+.card_picture_view {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 247, 0.5294117647);
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.card_picture:hover .card_picture_view{
+    opacity: 1;
+    cursor: pointer;
+}
+.card_picture:hover .card_picture_svg{
+    opacity: 1;
+    cursor: pointer;
 }
 .card_content {
     margin-top: 24px;
@@ -46,6 +78,10 @@ body {
 .card_content_title a {
     text-decoration: none;
     color: var(--white);
+}
+.card_content_title a:hover {
+    color: var(--cyan-400);
+    cursor: pointer;
 }
 .card_content_discreption {
     color: var(--blue-500);
@@ -97,7 +133,12 @@ body {
 .card_author_name {
     color: var(--blue-500);
 }
-.card_author_name span {
+.card_author_name span a:hover {
+    color: var(--cyan-400);
+    cursor: pointer;
+}
+.card_author_name span a {
+    text-decoration: none;
     color: var(--white);
 }
 .attribution {
